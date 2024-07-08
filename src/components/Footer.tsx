@@ -7,7 +7,7 @@ import apple from "../assets/apple.svg"
 const Footer = () => {
     return (
         <div className='w-full p-[1rem]'>
-            <div className='flex justify-center items-center'>
+            <div className='flex justify-center items-center m-[1.5rem]'>
                 <img src={vector} alt="" />
             </div>
             <div className='flex justify-between'>

@@ -4,7 +4,12 @@ import cart from "../assets/cart.svg"
 import logo from "../assets/logo.svg"
 import vector from "../assets/notify.svg"
 
-const Navbar = () => {
+interface navProps {
+    count : number
+}
+
+const Navbar: React.FC<navProps> = ({count}) => {
+
     return (
         <div className='flex justify-around items-center'>
             <div>
@@ -19,12 +24,12 @@ const Navbar = () => {
                 Search Bar
             </div>
             <div className='flex gap-3'>
-                <div className='relative'>
+                <Link to="./checkout" className='relative'>
                     <img src={cart} alt='cartImage'width={25} />
                     <h1 className='h-4 w-4 bg-[#FFF078] absolute top-[-7px] right-[-7px] px-1 leading-[.9rem] rounded-full font-semibold'>
-                        2
+                        {count}
                     </h1>
-                </div>
+                </Link>
                 <div>
                     <img src={vector} width={20} alt='NotificationImage' />
                 </div>
