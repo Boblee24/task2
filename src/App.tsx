@@ -3,9 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/hero';
 import CheckOut from './pages/CheckOut';
-import Footer from './components/Footer';
 import Main from './pages/Main';
-import Deal from './components/Deal';
 
 interface Food {
   id: number;
@@ -45,8 +43,6 @@ const App: React.FC = () => {
           <Route path='/' element={<Main handleAddToCart={handleAddToCart} />} />
           <Route path='/checkout' element={<CheckOut cartItems={cartItems} setCartItems={setCartItems}/>} />
         </Routes>
-        <Deal/>
-        <Footer />
     </div>
   );
 };

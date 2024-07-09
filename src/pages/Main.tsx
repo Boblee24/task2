@@ -1,5 +1,7 @@
 import foodData from "../data.json"
 import cart from "../assets/cart2.svg"
+import Footer from "../components/Footer";
+import Deal from "../components/Deal";
 
 interface Food {
     id: number;
@@ -19,6 +21,7 @@ const Main: React.FC<MainProps> = ({ handleAddToCart }) => {
         return image;
     };
     return (
+        <div>
         <div className='px-[2rem] w-full'>
             <div className="flex items-center flex-col justify-center w-full">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
@@ -29,7 +32,7 @@ const Main: React.FC<MainProps> = ({ handleAddToCart }) => {
                             <h2 className="text-[1.3rem] md:text-[1.5rem] py-3 leading-8 text-[#FFF078]">{food.name}</h2>
                             <p className="text-[#FFF078] text-[.9rem] md:text-[.9rem] md:h-[150px]">{food.description}</p>
                             <p className="text-[#FFF078] font-semibold my-3 text-[1.2rem]">₦{food.price.toFixed(2)}</p>
-                            <button onClick={() => handleAddToCart(food)} className="bg-[#fff078] flex items-center m-auto rounded-lg py-1 px-2 md:my-4">
+                            <button onClick={() => handleAddToCart(food)} className="bg-[#fff078] flex items-center m-auto rounded-lg py-1 px-2 md:my-4"> 
                                 <h3 className='text-[#FF0000]'>Buy Now</h3>
                                 <img src={cart} className='fill-[red]' alt="" />
                             </button>
@@ -72,6 +75,9 @@ const Main: React.FC<MainProps> = ({ handleAddToCart }) => {
                 </div>
             </div>
 
+        </div>
+        <Deal/>
+        <Footer/>
         </div>
     )
 }

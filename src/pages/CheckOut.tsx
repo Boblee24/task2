@@ -1,5 +1,7 @@
 import { CartItem } from "../App";
 import phone from "../assets/phone.svg"
+import Deal from "../components/Deal";
+import Infooter from "../components/Infooter";
 
 interface CheckOutProps {
     cartItems: CartItem[];
@@ -36,14 +38,16 @@ const CheckOut: React.FC<CheckOutProps> = ({ cartItems, setCartItems }) => {
     };
 
     return (
-        <div className="mx-2">
+        <div className=''>
+            <div className="mx-2">
         <h2 className="text-[2rem] text-[#FFF078] font-semibold text-center">Cart</h2>
         {cartItems.length === 0 ? (
             <p className="text-[#FFF078] font-semibold text-center mb-2">Your cart is empty.</p>
         ) : (
-            <div className="md:grid md:grid-cols-3">
+            <div className="md:grid md:grid-cols-3 ">
                 {cartItems.map((food, index) => (
-                    <div key={index} className="my-[2rem] flex justify-between items-center md:flex-col ">
+                    <div className="flex justify-center items-center w-full h-full">
+                        <div key={index} className="my-[2rem] flex justify-between items-center md:flex-col">
                         <div>
                             <img src={imageFunc(food.image)} alt={food.name} className="w-[150px] md:w-[200px] md:m-auto" />
                         </div>
@@ -76,6 +80,7 @@ const CheckOut: React.FC<CheckOutProps> = ({ cartItems, setCartItems }) => {
                         </div>
                         <hr className='my-4' />
                     </div>
+                    </div>
                 ))}
             </div>
         )}
@@ -88,6 +93,13 @@ const CheckOut: React.FC<CheckOutProps> = ({ cartItems, setCartItems }) => {
             </div>
         )}
     </div>
+    <div className="hidden md:block">
+    <Deal/>
+    </div>
+    
+    <Infooter/>
+        </div>
+        
 );
 };
 

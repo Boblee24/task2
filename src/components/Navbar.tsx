@@ -36,7 +36,7 @@ const Navbar: React.FC<navProps> = ({count}) => {
             <div className='hidden'>
                 Search Bar
             </div>
-            <div className='flex gap-3'>
+            <div className='flex gap-3 md:gap-6'>
                 <Link to="./checkout" className='relative'>
                     <img src={cartImage} alt='cartImage'width={25} />
                     {
