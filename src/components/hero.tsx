@@ -2,7 +2,7 @@ import hero from "../assets/hero1.png"
 
 const Hero = () => {
     return (
-        <div className='flex px-8'>
+        <div className='flex px-8 my-[2rem]'>
             <div className='flex-1'>
                 <h1 className='text-[#FFF078] text-2xl'>Our Exclusive Menu is Waiting For You</h1>
                 <h4 className='text-[#FFF078] text-sm'>You Deserve a Break Today. Feed your child with our amazing meals.</h4>

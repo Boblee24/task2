@@ -16,8 +16,8 @@ const Navbar: React.FC<navProps> = ({count}) => {
                 <img src={logo} alt='logo' />
             </div>
             <div className='flex gap-[3rem]'>
-                <Link to="/" className='text-[#FFF078] hidden'>Home</Link>
-                <Link to="/" className='text-[#FFF078] hidden'>Download App</Link>
+                <Link to="/" className='text-[#FFF078] hidden md:block'>Home</Link>
+                <Link to="/" className='text-[#FFF078] hidden md:block'>Download App</Link>
                 <Link to="/" className='text-[#FFF078]'>Exclusive Offer</Link>
             </div>
             <div className='hidden'>
