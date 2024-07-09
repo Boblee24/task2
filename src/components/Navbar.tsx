@@ -11,7 +11,7 @@ interface navProps {
 const Navbar: React.FC<navProps> = ({count}) => {
 
     return (
-        <div className='flex justify-around items-center fixed top-0 w-full bg-[#DA291C]'>
+        <div className='flex justify-around items-center fixed top-0 w-full bg-[#DA291C] z-30 '>
             <div>
                 <img src={logo} alt='logo' />
             </div>
