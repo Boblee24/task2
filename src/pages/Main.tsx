@@ -26,8 +26,8 @@ const Main: React.FC<MainProps> = ({ handleAddToCart }) => {
                     <div>
                         <div key={food.id} className="my-[2rem] flex flex-col px-10">
                             <img src={imageFunc(food.image)} alt={food.name} className="w-2/3 m-auto md:m-0" />
-                            <h2 className="text-[1.5rem] md:text-[1.5rem] py-3 leading-8 text-[#FFF078]">{food.name}</h2>
-                            <p className="text-[#FFF078] text-[.9rem] md:text-[.9rem] md:h-[120px]">{food.description}</p>
+                            <h2 className="text-[1.3rem] md:text-[1.5rem] py-3 leading-8 text-[#FFF078]">{food.name}</h2>
+                            <p className="text-[#FFF078] text-[.9rem] md:text-[.9rem] md:h-[150px]">{food.description}</p>
                             <p className="text-[#FFF078] font-semibold my-3 text-[1.2rem]">₦{food.price.toFixed(2)}</p>
                             <button onClick={() => handleAddToCart(food)} className="bg-[#fff078] flex items-center m-auto rounded-lg py-1 px-2 md:my-4">
                                 <h3 className='text-[#FF0000]'>Buy Now</h3>
