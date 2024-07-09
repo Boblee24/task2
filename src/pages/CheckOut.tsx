@@ -36,15 +36,15 @@ const CheckOut: React.FC<CheckOutProps> = ({ cartItems, setCartItems }) => {
     };
 
     return (
-        <div>
+        <div className="mx-2">
             <h2 className="text-[2rem] text-[#FFF078] font-semibold text-center">Cart</h2>
             {cartItems.length === 0 ? (
                 <p className="text-[#FFF078] font-semibold text-center mb-2">Your cart is empty.</p>
             ) : (
                 cartItems.map((food, index) => (
-                    <div key={index} className="my-[2rem] flex ">
+                    <div key={index} className="my-[2rem] flex justify-between items-center ">
                         <div>
-                            <img src={imageFunc(food.image)} alt={food.name} className="w-2/3" />
+                            <img src={imageFunc(food.image)} alt={food.name} className="w-[200px] " />
                         </div>
                         <div>
                             <h2 className="text-[1.4rem] text-[#FFF078]">{food.name}</h2>
