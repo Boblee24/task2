@@ -23,7 +23,7 @@ const Footer = () => {
                     <a href='/' className='text-[.7rem] md:text-[.9rem] text-white block mb-2'>Shopping Details</a>
                     <a href='/' className='text-[.7rem] md:text-[.9rem] text-white block mb-2'>Offers Coupons</a>
                 </div>
-                <div>
+                <div className='ml-2'>
                     <h4 className='text-[white] text-[.9rem] mb-4 '>Download Mobile App</h4>
                     <div className='flex bg-white mb-[.9rem] rounded-md p-1 w-[120px] gap-1'>
                         <img src={play} alt="downloadLogo" />
@@ -35,10 +35,10 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex justify-between my-[2rem] md:justify-start md:gap-[30%]'>
+            <div className='flex justify-between my-[2rem] md:justify-start md:gap-[30%] gap-2'>
                 <img src={logo} alt="logo" />
                 <div>
-                    <p className='text-[.7rem] md:text-[.9rem] text-white'>If you need any help, contact self-help  on +2349139965381</p>
+                    <p className='text-[.7rem] md:text-[.9rem] text-white text-center'>If you need any help, contact self-help  on +2349139965381</p>
                     <h4 className='text-center text-[.9rem] text-white'>Ikeja, Lagos</h4>
                 </div>
             </div>
