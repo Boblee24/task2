@@ -48,7 +48,7 @@ const Navbar: React.FC<navProps> = ({count}) => {
                     <img src={vector} width={20} alt='NotificationImage' />
                 </div>
                 <div>
-                    <img src={profile} width={25} alt='profile' className='rounded-[50%]' />
+                    <img src={profile} width={30} alt='profile' className='rounded-[50%]' />
                 </div>
             </div>
         </div>
