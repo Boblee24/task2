@@ -49,7 +49,7 @@ const CheckOut: React.FC<CheckOutProps> = ({ cartItems, setCartItems }) => {
                         <div>
                             <h2 className="text-[1.4rem] text-[#FFF078]">{food.name}</h2>
                             <p className="text-[#FFF078] font-semibold my-3 text-[1.2rem]">₦{food.price.toFixed(2)}</p>
-                            <div className="flex gap-[29%]">
+                            <div className="flex gap-[8]">
                                 <div className="flex items-center">
                                     <button
                                         onClick={() => handleDecreaseQuantity(food.id)}
