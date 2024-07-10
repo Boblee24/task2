@@ -11,3 +11,12 @@
     width: 100%;
     height: 50vh;
 }
+
+@media (min-width: 768px) {
+    .checkout {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        justify-items: space-around;
+        width: 100%;
+        height: 100%;
+    }
+}

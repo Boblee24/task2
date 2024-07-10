@@ -44,7 +44,7 @@ const CheckOut: React.FC<CheckOutProps> = ({ cartItems, setCartItems }) => {
         {cartItems.length === 0 ? (
             <p className="text-[#FFF078] font-semibold text-center mb-2">Your cart is empty.</p>
         ) : (
-            <div className="md:grid md:grid-cols-3 ">
+            <div className="md:grid checkout">
                 {cartItems.map((food, index) => (
                     <div className="flex justify-center items-center w-full h-full">
                         <div key={index} className="my-[2rem] flex justify-between items-center md:flex-col w-full ">
