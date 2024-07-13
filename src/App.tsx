@@ -31,7 +31,7 @@ const App: React.FC = () => {
   const showPagination = location.pathname === '/';
 
   const fetchProducts = async (page: number) => {
-    const response = await fetch(`products?organization_id=2e9285e1bbce4b55afe9b33258add851&reverse_sort=false&page=${page}&size=10&Appid=DG9K9DJ3ZWC3JMH&Apikey=b6579fba3b414aee8bfb7bfb9bd2c35b20240712150626781279`);
+    const response = await fetch(`https://api.timbu.cloud/products?organization_id=2e9285e1bbce4b55afe9b33258add851&reverse_sort=false&page=${page}&size=10&Appid=DG9K9DJ3ZWC3JMH&Apikey=b6579fba3b414aee8bfb7bfb9bd2c35b20240712150626781279`);
     return response.json();
   };
 
