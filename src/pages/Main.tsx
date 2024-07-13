@@ -32,7 +32,7 @@ const Main: React.FC<MainProps> = ({ handleAddToCart, productItems, currentPage,
                                 navigate(`/${food.name}`)
                             }}>
                                 <div key={food.id} className="my-[2rem] flex flex-col px-10 cursor-pointer">
-                                    <img src={`https://api.timbu.cloud/images/${food.photos[0].url}`} alt={food.name} className="w-2/3 m-auto md:m-0" />
+                                    <img src={`https://api.timbu.cloud/images/${food.photos[0].url}`} alt={food.name} className="rounded-full w-2/3 m-auto md:m-0" />
                                     <h2 className="text-[1.3rem] md:text-[1.5rem] py-3 leading-8 text-[#FFF078]">{food.name}</h2>
                                     <p className="text-[#FFF078] text-[.9rem] md:text-[.9rem] md:h-[150px]">{truncateDescription(food.description, 150)}</p>
                                     <p className="text-[#FFF078] font-semibold my-3 text-[1.2rem]">₦{food.current_price[0].NGN[0].toFixed(2)}</p>
