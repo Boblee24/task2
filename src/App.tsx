@@ -75,7 +75,6 @@ const App: React.FC = () => {
     setProductItems(data?.items)
   }, [data])
 
-  console.log(data?.items)
 
   if (error) return <div>Something went wrong</div>
 

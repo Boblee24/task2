@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+body {
+    background-color: #DA291C;
+}
 .deal {
     background-image: url(./assets/percent.png);
     background-repeat: no-repeat;
