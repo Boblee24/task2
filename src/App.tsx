@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/hero';
 import CheckOut from './pages/CheckOut';
@@ -27,6 +27,8 @@ export interface CartItem extends Food {
 const App: React.FC = () => {
 
   const [currentPage, setCurrentPage] = useState(3);
+  const location = useLocation();
+  const showPagination = location.pathname === '/';
 
   const fetchProducts = async (page: number) => {
     const response = await fetch(`products?organization_id=2e9285e1bbce4b55afe9b33258add851&reverse_sort=false&page=${page}&size=10&Appid=DG9K9DJ3ZWC3JMH&Apikey=b6579fba3b414aee8bfb7bfb9bd2c35b20240712150626781279`);
@@ -78,7 +80,7 @@ const App: React.FC = () => {
   if (error) return <div>Something went wrong</div>
 
   return (
-    <div className="App bg-[#DA291C] w-[1440px] m-auto">
+    <div className="App bg-[#DA291C] max-w-[1440px] m-auto">
       <Navbar count={cartItems.length} />
       <Hero />
       <Routes>
@@ -102,22 +104,24 @@ const App: React.FC = () => {
         )}
         <Route path='/checkout' element={<CheckOut cartItems={cartItems} setCartItems={setCartItems} />} />
       </Routes>
-      <div className="flex justify-center space-x-4 py-4">
-        <button
-          onClick={handlePrevPage}
-          disabled={currentPage === 1}
-          className={`bg-[#fff078] flex items-center rounded-lg py-1 px-4 md:my-4 ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#ffd700]'} transition duration-300`}
-        >
-          Previous
-        </button>
-        <button
-          onClick={handleNextPage}
-          disabled={currentPage === 3}
-          className={`bg-[#fff078] flex items-center rounded-lg py-1 px-4 md:my-4 ${currentPage === 3 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#ffd700]'} transition duration-300`}
-        >
-          Next
-        </button>
-      </div>
+      {showPagination && (
+        <div className="pagination-controls flex justify-between mt-4 w-[200px] m-auto">
+          <button
+            onClick={handlePrevPage}
+            disabled={currentPage === 1}
+            className={`bg-[#fff078] py-2 px-4 rounded-lg font-semibold ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+          >
+            Previous
+          </button>
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === 3}
+            className={`bg-[#fff078] py-2 px-4 font-semibold rounded-lg ${currentPage === 3 ? 'opacity-50 cursor-not-allowed' : ''}`}
+          >
+            Next
+          </button>
+        </div>
+      )}
       <Deal />
       <Footer />
     </div>
