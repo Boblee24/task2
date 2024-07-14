@@ -16,22 +16,23 @@ export interface Food {
   price: number;
   description?: string;
   photos: any;
-  current_price: any
+  current_price: any;
 }
 
 export interface CartItem extends Food {
   quantity: number;
 }
 
-
 const App: React.FC = () => {
-
   const [currentPage, setCurrentPage] = useState(3);
   const location = useLocation();
   const showPagination = location.pathname === '/';
 
   const fetchProducts = async (page: number) => {
-    const response = await fetch(`products?organization_id=2e9285e1bbce4b55afe9b33258add851&reverse_sort=false&page=${page}&size=10&Appid=DG9K9DJ3ZWC3JMH&Apikey=b6579fba3b414aee8bfb7bfb9bd2c35b20240712150626781279`);
+    const response = await fetch(`/api/products?page=${page}&size=10`);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
     return response.json();
   };
 
@@ -42,20 +43,20 @@ const App: React.FC = () => {
 
   const [productItems, setProductItems] = useState<Food[]>([]);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
   const handleNextPage = () => {
     if (currentPage < 3) {
       setCurrentPage(prevPage => prevPage + 1);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
-  
+
   const handlePrevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(prevPage => prevPage - 1);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
-  
 
   const handleAddToCart = (food: Food) => {
     setCartItems((prevItems) => {
@@ -70,13 +71,13 @@ const App: React.FC = () => {
     });
   };
 
-
   useEffect(() => {
-    setProductItems(data?.items)
-  }, [data])
+    if (data && data.items) {
+      setProductItems(data.items);
+    }
+  }, [data]);
 
-
-  if (error) return <div>Something went wrong</div>
+  if (error) return <div>Something went wrong</div>;
 
   return (
     <div className="App bg-[#DA291C] max-w-[1440px] m-auto">
