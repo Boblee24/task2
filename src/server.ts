@@ -1,8 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-require('dotenv').config()
+// require('dotenv').config()
 
 app.use(cors())
 
-app.listen(3000)
+// app.listen(3000)
